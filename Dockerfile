@@ -23,13 +23,30 @@ RUN JAVA_UPDATE="102" && \
     mv -v * /usr/java && \
     mv -v /tmp/UnlimitedJCEPolicyJDK8/*.jar /usr/java/jre/lib/security && \
 
-    apk del .build-deps
+    apk del .build-deps && \
 
-
-RUN rm -rvf /usr/java/jre/lib/ext/nashorn.jar \
+    rm -rvf /usr/java/jre/lib/ext/nashorn.jar \
             /usr/java/jre/lib/jfr.jar \
             /usr/java/jre/lib/jfr \
             /usr/java/jre/lib/oblique-fonts \
+            /usr/java/lib/missioncontrol \
+            /usr/java/lib/visualvm \
+            /usr/java/lib/*javafx* \
+            /usr/java/jre/lib/plugin.jar \
+            /usr/java/jre/lib/ext/jfxrt.jar \
+            /usr/java/jre/lib/javaws.jar \
+            /usr/java/jre/lib/desktop \
+            /usr/java/jre/plugin \
+            /usr/java/jre/lib/deploy* \
+            /usr/java/jre/lib/*javafx* \
+            /usr/java/jre/lib/*jfx* \
+            /usr/java/jre/lib/amd64/libdecora_sse.so \
+            /usr/java/jre/lib/amd64/libprism_*.so \
+            /usr/java/jre/lib/amd64/libfxplugins.so \
+            /usr/java/jre/lib/amd64/libglass.so \
+            /usr/java/jre/lib/amd64/libgstreamer-lite.so \
+            /usr/java/jre/lib/amd64/libjavafx*.so \
+            /usr/java/jre/lib/amd64/libjfx*.so \
 
             /usr/java/db \
             /usr/java/include \
